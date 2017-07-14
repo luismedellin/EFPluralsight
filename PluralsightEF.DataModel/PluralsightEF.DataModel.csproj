@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{12ED27ED-1E22-404B-8255-B67C572F7B0B}</ProjectGuid>
+    <ProjectGuid>{A60E8F5F-30BF-467E-A398-7425973913DD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PluralsightEF</RootNamespace>
-    <AssemblyName>PluralsightEF</AssemblyName>
+    <RootNamespace>PluralsightEF.DataModel</RootNamespace>
+    <AssemblyName>PluralsightEF.DataModel</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -47,14 +47,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes.cs" />
-    <Compile Include="Enums\EquipmentType.cs" />
-    <Compile Include="Enums\NinjaType.cs" />
+    <Compile Include="Migrations\201707140305341_Initial.cs" />
+    <Compile Include="Migrations\201707140305341_Initial.Designer.cs">
+      <DependentUpon>201707140305341_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707140312558_DateOfBirthNinja.cs" />
+    <Compile Include="Migrations\201707140312558_DateOfBirthNinja.Designer.cs">
+      <DependentUpon>201707140312558_DateOfBirthNinja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707140326597_DateOfBirthNinja1.cs" />
+    <Compile Include="Migrations\201707140326597_DateOfBirthNinja1.Designer.cs">
+      <DependentUpon>201707140326597_DateOfBirthNinja1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="NinjaContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PluralsightEF\PluralsightEF.csproj">
+      <Project>{12ed27ed-1e22-404b-8255-b67c572f7b0b}</Project>
+      <Name>PluralsightEF</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201707140305341_Initial.resx">
+      <DependentUpon>201707140305341_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707140312558_DateOfBirthNinja.resx">
+      <DependentUpon>201707140312558_DateOfBirthNinja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707140326597_DateOfBirthNinja1.resx">
+      <DependentUpon>201707140326597_DateOfBirthNinja1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
